@@ -200,6 +200,25 @@ class Roadmap:
     #     lc = mc.LineCollection(edges, colors=[(0,0,0,1)])
     #     ax.add_collection(lc)
     #
+    def getMinMaxXY(self):
+        initial_node = list(self.graph.keys())[0]
+        print(initial_node)
+        min_x = initial_node[0]
+        max_x = initial_node[0]
+        min_y = initial_node[1]
+        max_y = initial_node[1]
+        for a in self.graph.keys():
+            if a[0] < min_x: min_x = a[0]
+            if a[0] > max_x: max_x = a[0]
+            if a[1] < min_y: min_y = a[1]
+            if a[1] > max_y: max_y = a[1]
+            for b in self.graph[a].keys():
+                if b[0] < min_x: min_x = b[0]
+                if b[0] > max_x: max_x = b[0]
+                if b[1] < min_y: min_y = b[1]
+                if b[1] > max_y: max_y = b[1]
+        return min_x, max_x, min_y, max_y
+
     def visualize(self, ax):
         edges = []
         for a in self.graph:

@@ -11,7 +11,7 @@ from rbpf import RBPF
 from particle import Particle
 import agent
 reload(agent)
-from agent import Agent
+from agent import AgentJupyter
 
 # import matplotlib
 import matplotlib.pyplot as plt

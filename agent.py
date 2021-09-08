@@ -19,6 +19,7 @@ class AgentJupyter(object):
 
         self._roadmap = roadmap
         # dest = self._roadmap.get_nearest_waypoint(self.pos)
+        print(e0, self.pos)
         self.psi = atan2(e0[1][0] - self.pos[0], e0[1][1] - self.pos[1])
         self._dt = dt
         self._t = 0
@@ -201,6 +202,7 @@ class AgentJupyterExhaustive(AgentJupyter):
 
 class AgentJupyterPerfect(AgentJupyter):
     def __init__(self, speed, roadmap, dt, fov=30., e0=None, x0=None, entropy_resolution=1):
+        print(e0,x0)
         super(AgentJupyterPerfect, self).__init__(speed, roadmap, dt, fov=fov, e0=e0, x0=x0, entropy_resolution=entropy_resolution)
         self.target_index = 0
 
